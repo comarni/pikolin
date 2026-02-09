@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pikolin - Tu Descanso, Nuestra Pasión</title>
+
+  <!-- Meta SEO -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+        content="Pikolin - Especialistas en descanso. Colchones, camas, almohadas, sábanas y textil de hogar de la mejor calidad." />
+  <meta name="keywords"
+        content="colchones, camas, almohadas, sábanas, mantas, cojines, Pikolin, descanso, textil hogar" />
+
+  <!-- Tipografías Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="contenedor nav">
+      <div class="logo">
+        <span class="logo-icon">💤</span>
+        Pikolin
+        <span class="logo-subtitle">Tu Descanso, Nuestra Pasión</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#sobre">Sobre Nosotros</a>
+        <a href="#contacto">Contacto</a>
+        <div class="nav-carrito-wrapper">
+          <button class="nav-carrito" id="btnCarrito" title="Ver cesta">
+            🛒 <span id="contadorCarrito">0</span>
+          </button>
+          <div class="carrito-modal" id="carritoModal">
+            <div class="carrito-contenido">
+              <h3>Tu cesta</h3>
+              <div id="itemsCarrito" class="carrito-items"></div>
+              <div class="carrito-total">
+                <strong>Total: <span id="totalCarrito">0.00</span> €</strong>
+              </div>
+              <button class="btn" id="btnPedido" style="width: 100%; margin-top: 1rem;">Hacer pedido</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- INICIO -->
+  <section id="inicio">
+    <div class="contenedor hero">
+      <div class="hero-texto fade-up">
+        <div class="hero-badges">
+          <div class="badge"><span>🛏️</span> Calidad Premium</div>
+          <div class="badge"><span>🚚</span> Envío Gratis</div>
+          <div class="badge"><span>⭐</span> Garantía Extendida</div>
+        </div>
+
+        <h1>El descanso que mereces<span> con Pikolin</span></h1>
+        <p>
+          Desde hace más de 70 años, Pikolin es sinónimo de innovación y calidad en el sector del descanso.
+          Descubre nuestra amplia gama de productos diseñados para garantizar tu mejor descanso.
+        </p>
+
+        <div class="hero-botones">
+          <a href="#productos" class="btn">Ver Catálogo <span>→</span></a>
+          <a href="#contacto" class="btn btn-outline">Contactar</a>
+        </div>
+      </div>
+
+      <div class="hero-imagen fade-up">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <h2>Nuestros Destacados</h2>
+            <div class="hero-chip">
+              <div class="hero-chip-dot"></div>
+              Ofertas del mes
+            </div>
+          </div>
+
+          <div class="hero-productos">
+            <div class="mini-card">
+              <div class="mini-card-img">
+                <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?w=400&h=300&fit=crop" alt="Colchones">
+                <div class="mini-badge">🛏️</div>
+              </div>
+              <div class="mini-card-content">
+                <strong>Colchones</strong>
+                <span class="mini-tag">Viscoelástica</span>
+                <span class="mini-price">Desde 299 €</span>
+              </div>
+            </div>
+            <div class="mini-card">
+              <div class="mini-card-img">
+                <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=400&h=300&fit=crop" alt="Almohadas">
+                <div class="mini-badge">💤</div>
+              </div>
+              <div class="mini-card-content">
+                <strong>Almohadas</strong>
+                <span class="mini-tag">Confort</span>
+                <span class="mini-price">Desde 29 €</span>
+              </div>
+            </div>
+            <div class="mini-card">
+              <div class="mini-card-img">
+                <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&h=300&fit=crop" alt="Textil">
+                <div class="mini-badge">✨</div>
+              </div>
+              <div class="mini-card-content">
+                <strong>Textil Hogar</strong>
+                <span class="mini-tag">Nuevas colecciones</span>
+                <span class="mini-price-special">Ver Ofertas</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card-footer">
+            <span>Financiación disponible sin intereses</span>
+            <span class="hero-badge-dest">🎁 Regalo con tu compra</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section id="productos">
+    <div class="contenedor">
+      <h2>Nuestro Catálogo</h2>
+      <p class="section-subtitle">
+        Descubre nuestra amplia selección de productos para un descanso perfecto.
+      </p>
+
+      <!-- Pestañas de categorías -->
+      <div class="tabs-menu">
+        <button class="tab-btn active" data-tab="colchones">Colchones</button>
+        <button class="tab-btn" data-tab="camas">Camas</button>
+        <button class="tab-btn" data-tab="almohadas">Almohadas</button>
+        <button class="tab-btn" data-tab="textil">Textil Hogar</button>
+      </div>
+
+      <!-- COLCHONES -->
+      <div class="menu-tab" id="tab-colchones">
+        <div class="menu-grid">
+          <article class="menu-card destacado">
+            <div class="menu-card-imagen">
+              <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?w=400&h=300&fit=crop" alt="Colchón Viscoelástico">
+            </div>
+            <div class="menu-card-contenido">
+              <div class="menu-titulo">Colchón Viscoelástico Premium</div>
+              <div class="menu-etiqueta">Tecnología de adaptación perfecta</div>
+              <p class="menu-detalle">
+                Colchón de última generación con viscoelástica de alta densidad. Adaptación perfecta al cuerpo,
+                independencia de lechos y máximo confort. Incluye tratamiento antiácaros.
+              </p>
+              <div class="menu-precios">
+                <span>90x190 · 299 €</span>
+                <span>135x190 · 449 €</span>
+                <span>150x190 · 549 €</span>
+                <span>180x200 · 699 €</span>
+              </div>
+              <div class="producto-selectors">
+                <select class="selector-tamaño" data-producto="Colchón Viscoelástico Premium" data-precios="299|449|549|699">
+                  <option value="0">90x190 - 299€</option>
+                  <option value="1">135x190 - 449€</option>
+                  <option value="2">150x190 - 549€</option>
+                  <option value="3">180x200 - 699€</option>
+                </select>
+                <input type="number" class="cantidad-input" min="1" max="10" value="1" placeholder="Cantidad">
+                <button class="btn-agregar" data-producto="Colchón Viscoelástico Premium">Agregar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-card-imagen">
+              <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=400&h=300&fit=crop" alt="Colchón Muelles">
+            </div>
+            <div class="menu-card-contenido">
+              <div class="menu-titulo">Colchón Muelles Ensacados</div>
+              <div class="menu-etiqueta">Transpirable y duradero</div>
+              <p class="menu-detalle">
+                Sistema de muelles ensacados individualmente para mayor durabilidad y transpirabilidad.
+                Firmeza media-alta, ideal para todas las posiciones de descanso.
+              </p>
+              <div class="menu-precios">
+                <span>90x190 · 249 €</span>
+                <span>135x190 · 399 €</span>
+                <span>150x190 · 479 €</span>
+                <span>180x200 · 599 €</span>
+              </div>
+              <div class="producto-selectors">
+                <select class="selector-tamaño" data-producto="Colchón Muelles Ensacados" data-precios="249|399|479|599">
+                  <option value="0">90x190 - 249€</option>
+                  <option value="1">135x190 - 399€</option>
+                  <option value="2">150x190 - 479€</option>
+                  <option value="3">180x200 - 599€</option>
+                </select>
+                <input type="number" class="cantidad-input" min="1" max="10" value="1" placeholder="Cantidad">
+                <button class="btn-agregar" data-producto="Colchón Muelles Ensacados">Agregar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-card-imagen">
+              <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=400&h=300&fit=crop" alt="Colchón Híbrido">
+            </div>
+            <div class="menu-card-contenido">
+              <div class="menu-titulo">Colchón Híbrido</div>
+              <div class="menu-etiqueta">Lo mejor de dos mundos</div>
+              <p class="menu-detalle">
+                Combinación perfecta de muelles ensacados y viscoelástica. Máximo confort y soporte.
+                Tecnología innovadora para un descanso reparador.
+              </p>
+              <div class="menu-precios">
+                <span>90x190 · 349 €</span>
+                <span>135x190 · 529 €</span>
+                <span>150x190 · 629 €</span>
+                <span>180x200 · 799 €</span>
+              </div>
+              <div class="producto-selectors">
+                <select class="selector-tamaño" data-producto="Colchón Híbrido" data-precios="349|529|629|799">
+                  <option value="0">90x190 - 349€</option>
+                  <option value="1">135x190 - 529€</option>
+                  <option value="2">150x190 - 629€</option>
+                  <option value="3">180x200 - 799€</option>
+                </select>
+                <input type="number" class="cantidad-input" min="1" max="10" value="1" placeholder="Cantidad">
+                <button class="btn-agregar" data-producto="Colchón Híbrido">Agregar</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- CAMAS -->
+      <div class="menu-tab" id="tab-camas" style="display:none;">
+        <div class="menu-grid">
+          <article class="menu-card destacado">
+            <div class="menu-card-imagen">
+              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&h=300&fit=crop" alt="Canapé Abatible">
+            </div>
+            <div class="menu-card-contenido">
+              <div class="menu-titulo">Canapé Abatible con Almacenaje</div>
+              <div class="menu-etiqueta">Máximo espacio de almacenamiento</div>
+              <p class="menu-detalle">
+                Canapé abatible de gran capacidad con pistones de alta calidad. Base tapizada transpirable.
+                Disponible en múltiples colores y acabados.
+              </p>
+              <div class="menu-precios">
+                <span>90x190 · 199 €</span>
+                <span>135x190 · 299 €</span>
+                <span>150x190 · 349 €</span>
+                <span>180x200 · 449 €</span>
+              </div>
+              <div class="producto-selectors">
+                <select class="selector-tamaño" data-producto="Canapé Abatible" data-precios="199|299|349|449">
+                  <option value="0">90x190 - 199€</option>
+                  <option value="1">135x190 - 299€</option>
+                  <option value="2">150x190 - 349€</option>
+                  <option value="3">180x200 - 449€</option>
+                </select>
+                <input type="number" class="cantidad-input" min="1" max="10" value="1" placeholder="Cantidad">
+                <button class="btn-agregar" data-producto="Canapé Abatible">Agregar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-card-imagen">
+              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=400&h=300&fit=crop" alt="Base Tapizada">
+            </div>
+            <div class="menu-card-contenido">
+              <div class="menu-titulo">Base Tapizada con Patas</div>
+              <div class="menu-etiqueta">Elegante y funcional</div>
+              <p class="menu-detalle">
+                Base tapizada de alta resistencia con patas metálicas. Tejido transpirable 3D.
+                Perfecto complemento para tu colchón.
+              </p>
+              <div class="menu-precios">
+                <span>90x190 · 129 €</span>
+                <span>135x190 · 179 €</span>
+                <span>150x190 · 219 €</span>
+                <span>180x200 · 279 €</span>
+              </div>
+              <div class="producto-selectors">
+                <select class="selector-tamaño" data-producto="Base Tapizada" data-precios="129|179|219|279">
+                  <option value="0">90x190 - 129€</option>
+                  <option value="1">135x190 - 179€</option>
+                  <option value="2">150x190 - 219€</option>
+                  <option value="3">180x200 - 279€</option>
+                </select>
+                <input type="number" class="cantidad-input" min="1" max="10" value="1" placeholder="Cantidad">
+                <button class="btn-agregar" data-producto="Base Tapizada">Agregar</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- ALMOHADAS -->
+      <div class="menu-tab" id="tab-almohadas" style="display:none;">
+        <div class="menu-grid">
+          <article class="menu-card destacado">
+            <div class="menu-card-imagen">
+              <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=400&h=300&fit=crop" alt="Almohada Viscoelástica">
+            </div>
+            <div class="menu-card-contenido">
+              <div class="menu-titulo">Almohada Viscoelástica Cervical</div>
+              <div class="menu-etiqueta">Diseño ergonómico</div>
+              <p class="menu-detalle">
+                Almohada viscoelástica de alta densidad con diseño cervical. Alivia tensiones y mejora la postura.
+                Tratamiento Aloe Vera y funda extraíble lavable.
+              </p>
+              <div class="menu-precios">
+                <span>70 cm · 39 €</span>
+                <span>90 cm · 49 €</span>
+              </div>
+              <div class="producto-selectors">
+                <select class="selector-tamaño" data-producto="Almohada Viscoelástica Cervical" data-precios="39|49">
+                  <option value="0">70 cm - 39€</option>
+                  <option value="1">90 cm - 49€</option>
+                </select>
+                <input type="number" class="cantidad-input" min="1" max="10" value="1" placeholder="Cantidad">
+                <button class="btn-agregar" data-producto="Almohada Viscoelástica Cervical">Agregar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-card-imagen">
+              <img src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=400&h=300&fit=crop" alt="Almohada Fibra">
+            </div>
+            <div class="menu-card-contenido">
+              <div class="menu-titulo">Almohada Fibra Transpirable</div>
+              <div class="menu-etiqueta">Suave y mullida</div>
+              <p class="menu-detalle">
+                Almohada de fibra hueca siliconada con excelente recuperación. Funda 100% algodón.
+                Lavable a máquina. Ideal para quienes duermen boca abajo.
+              </p>
+              <div class="menu-precios">
+                <span>70 cm · 19 €</span>
+                <span>90 cm · 25 €</span>
+              </div>
+              <div class="producto-selectors">
+                <select class="selector-tamaño" data-producto="Almohada Fibra Transpirable" data-precios="19|25">
+                  <option value="0">70 cm - 19€</option>
+                  <option value="1">90 cm - 25€</option>
+                </select>
+                <input type="number" class="cantidad-input" min="1" max="10" value="1" placeholder="Cantidad">
+                <button class="btn-agregar" data-producto="Almohada Fibra Transpirable">Agregar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-card-imagen">
+              <img src="https://images.unsplash.com/photo-1631049035634-c04cc7a8b5c5?w=400&h=300&fit=crop" alt="Almohada Gel">
+            </div>
+            <div class="menu-card-contenido">
+              <div class="menu-titulo">Almohada Gel Refrescante</div>
+              <div class="menu-etiqueta">Sensación de frescor</div>
+              <p class="menu-detalle">
+                Almohada con tecnología de gel refrescante. Mantiene la temperatura ideal durante toda la noche.
+                Perfecta para personas calurosas.
+              </p>
+              <div class="menu-precios">
+                <span>70 cm · 49 €</span>
+                <span>90 cm · 59 €</span>
+              </div>
+              <div class="producto-selectors">
+                <select class="selector-tamaño" data-producto="Almohada Gel Refrescante" data-precios="49|59">
+                  <option value="0">70 cm - 49€</option>
+                  <option value="1">90 cm - 59€</option>
+                </select>
+                <input type="number" class="cantidad-input" min="1" max="10" value="1" placeholder="Cantidad">
+                <button class="btn-agregar" data-producto="Almohada Gel Refrescante">Agregar</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- TEXTIL HOGAR -->
+      <div class="menu-tab" id="tab-textil" style="display:none;">
+        <div class="menu-grid">
+          <article class="menu-card destacado">
+            <div class="menu-card-imagen">
+              <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&h=300&fit=crop" alt="Sábanas">
+            </div>
+            <div class="menu-card-contenido">
+              <div class="menu-titulo">Juego Sábanas Algodón Premium</div>
+              <div class="menu-etiqueta">Tacto suave y sedoso</div>
+              <p class="menu-detalle">
+                Juego de sábanas 100% algodón egipcio. Incluye sábana encimera, bajera ajustable y 2 fundas.
+                Disponible en múltiples colores. Lavable a 60°C.
+              </p>
+              <div class="menu-precios">
+                <span>90 cm · 45 €</span>
+                <span>135 cm · 59 €</span>
+                <span>150 cm · 69 €</span>
+                <span>180 cm · 79 €</span>
+              </div>
+              <div class="producto-selectors">
+                <select class="selector-tamaño" data-producto="Juego Sábanas Algodón Premium" data-precios="45|59|69|79">
+                  <option value="0">90 cm - 45€</option>
+                  <option value="1">135 cm - 59€</option>
+                  <option value="2">150 cm - 69€</option>
+                  <option value="3">180 cm - 79€</option>
+                </select>
+                <input type="number" class="cantidad-input" min="1" max="10" value="1" placeholder="Cantidad">
+                <button class="btn-agregar" data-producto="Juego Sábanas Algodón Premium">Agregar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-card-imagen">
+              <img src="https://images.unsplash.com/photo-1615800098779-1be32e60cca3?w=400&h=300&fit=crop" alt="Edredón">
+            </div>
+            <div class="menu-card-contenido">
+              <div class="menu-titulo">Edredón Nórdico 4 Estaciones</div>
+              <div class="menu-etiqueta">Calidez todo el año</div>
+              <p class="menu-detalle">
+                Edredón nórdico de fibra hueca de alta calidad. Sistema de botones para ajustar grosor.
+                Perfecto para cualquier estación del año.
+              </p>
+              <div class="menu-precios">
+                <span>90 cm · 49 €</span>
+                <span>135 cm · 69 €</span>
+                <span>150 cm · 79 €</span>
+                <span>180 cm · 99 €</span>
+              </div>
+              <div class="producto-selectors">
+                <select class="selector-tamaño" data-producto="Edredón Nórdico 4 Estaciones" data-precios="49|69|79|99">
+                  <option value="0">90 cm - 49€</option>
+                  <option value="1">135 cm - 69€</option>
+                  <option value="2">150 cm - 79€</option>
+                  <option value="3">180 cm - 99€</option>
+                </select>
+                <input type="number" class="cantidad-input" min="1" max="10" value="1" placeholder="Cantidad">
+                <button class="btn-agregar" data-producto="Edredón Nórdico 4 Estaciones">Agregar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-card-imagen">
+              <img src="https://images.unsplash.com/photo-1607082349566-187342175e2f?w=400&h=300&fit=crop" alt="Cojines">
+            </div>
+            <div class="menu-card-contenido">
+              <div class="menu-titulo">Pack 2 Cojines Decorativos</div>
+              <div class="menu-etiqueta">Dale vida a tu dormitorio</div>
+              <p class="menu-detalle">
+                Pack de 2 cojines decorativos de 45x45 cm. Funda extraíble con cremallera.
+                Variedad de diseños y colores modernos.
+              </p>
+              <div class="menu-precios">
+                <span>Pack 2 unidades · 29 €</span>
+              </div>
+              <div class="producto-selectors">
+                <select class="selector-tamaño" data-producto="Pack 2 Cojines Decorativos" data-precios="29">
+                  <option value="0">Pack 2 unidades - 29€</option>
+                </select>
+                <input type="number" class="cantidad-input" min="1" max="10" value="1" placeholder="Cantidad">
+                <button class="btn-agregar" data-producto="Pack 2 Cojines Decorativos">Agregar</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-card-imagen">
+              <img src="https://images.unsplash.com/photo-1631048831446-8fc4f01abe26?w=400&h=300&fit=crop" alt="Manta">
+            </div>
+            <div class="menu-card-contenido">
+              <div class="menu-titulo">Manta de Sofá Tacto Peluche</div>
+              <div class="menu-etiqueta">Suavidad extrema</div>
+              <p class="menu-detalle">
+                Manta de tacto suave tipo peluche. Ideal para el sofá o pie de cama.
+                Lavable a máquina. Tamaño 130x170 cm.
+              </p>
+              <div class="menu-precios">
+                <span>130x170 cm · 35 €</span>
+              </div>
+              <div class="producto-selectors">
+                <select class="selector-tamaño" data-producto="Manta de Sofá Tacto Peluche" data-precios="35">
+                  <option value="0">130x170 cm - 35€</option>
+                </select>
+                <input type="number" class="cantidad-input" min="1" max="10" value="1" placeholder="Cantidad">
+                <button class="btn-agregar" data-producto="Manta de Sofá Tacto Peluche">Agregar</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="servicios-section">
+    <div class="contenedor">
+      <h2>Nuestros Servicios</h2>
+      <p class="section-subtitle">
+        Más que productos, te ofrecemos una experiencia completa de descanso
+      </p>
+
+      <div class="servicios-grid">
+        <div class="servicio-card">
+          <div class="servicio-icon">🚚</div>
+          <h3>Envío e Instalación</h3>
+          <p>Entrega gratuita en península y montaje profesional incluido. Tu comodidad es nuestra prioridad.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="servicio-icon">💳</div>
+          <h3>Financiación sin Intereses</h3>
+          <p>Financiamos tu compra hasta 12 meses sin intereses. Disfruta ahora, paga después.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="servicio-icon">🔄</div>
+          <h3>Recogida de tu Colchón Antiguo</h3>
+          <p>Nos llevamos tu colchón usado de forma gratuita con la compra de uno nuevo.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="servicio-icon">⭐</div>
+          <h3>Garantía Extendida</h3>
+          <p>Hasta 10 años de garantía en nuestros colchones premium. Calidad asegurada.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="servicio-icon">🛏️</div>
+          <h3>Prueba 100 Noches</h3>
+          <p>Prueba tu colchón durante 100 noches. Si no estás satisfecho, te lo cambiamos.</p>
+        </div>
+        <div class="servicio-card">
+          <div class="servicio-icon">💬</div>
+          <h3>Asesoramiento Personalizado</h3>
+          <p>Nuestros expertos te ayudan a elegir el producto perfecto para tu descanso.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section id="sobre">
+    <div class="contenedor sobre-grid">
+      <div class="sobre-texto fade-up">
+        <h2>Sobre Pikolin</h2>
+        <p>
+          Desde 1948, Pikolin ha sido pionera en el sector del descanso en España.
+          Con más de 70 años de experiencia, nos hemos convertido en la marca de confianza
+          para millones de hogares españoles.
+        </p>
+        <p>
+          Nuestra misión es mejorar la calidad de vida de las personas a través del descanso.
+          Innovamos constantemente en materiales y tecnologías para ofrecer los mejores productos.
+        </p>
+
+        <div class="sobre-recursos">
+          <div class="recurso-card">
+            <span class="recurso-kicker">Desde 1948</span>
+            <p>Más de 70 años de experiencia en el sector del descanso.</p>
+          </div>
+          <div class="recurso-card">
+            <span class="recurso-kicker">Innovación</span>
+            <p>Tecnología avanzada y patentes propias en colchones.</p>
+          </div>
+          <div class="recurso-card">
+            <span class="recurso-kicker">Sostenibilidad</span>
+            <p>Compromiso con el medio ambiente en todos nuestros procesos.</p>
+          </div>
+        </div>
+
+        <div class="sobre-valores">
+          <div class="sobre-valor">
+            <strong>Calidad Certificada</strong>
+            Todos nuestros productos cumplen con las normativas europeas más exigentes.
+          </div>
+          <div class="sobre-valor">
+            <strong>Fabricación Nacional</strong>
+            Producción 100% en España, apoyando la economía local y garantizando calidad.
+          </div>
+          <div class="sobre-valor">
+            <strong>Atención al Cliente</strong>
+            Equipo de expertos disponible para asesorarte en todo momento.
+          </div>
+        </div>
+      </div>
+
+      <div class="sobre-galeria fade-up">
+        <div class="galeria-item tall">
+          <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?w=400&h=600&fit=crop" alt="Showroom Pikolin">
+          <div class="galeria-caption">
+            <span>Nuestro Showroom</span>
+            <small>Ven a probar nuestros productos</small>
+          </div>
+        </div>
+        <div class="galeria-item">
+          <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=400&h=300&fit=crop" alt="Tecnología">
+          <div class="galeria-caption">
+            <span>Tecnología Avanzada</span>
+            <small>Innovación en cada producto</small>
+          </div>
+        </div>
+        <div class="galeria-item wide">
+          <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=800&h=400&fit=crop" alt="Fábrica">
+          <div class="galeria-caption">
+            <span>Fabricación Nacional</span>
+            <small>Hecho en España con orgullo</small>
+          </div>
+        </div>
+        <div class="galeria-item">
+          <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=400&h=300&fit=crop" alt="Hogar">
+          <div class="galeria-caption">
+            <span>Tu Hogar</span>
+            <small>Confort en cada rincón</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="contenedor contacto-grid">
+      <div class="fade-up">
+        <h2>Contacto</h2>
+        <p class="section-subtitle">
+          ¿Necesitas asesoramiento? Estamos aquí para ayudarte.
+        </p>
+
+        <form id="contactoForm">
+          <div class="campo">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+          </div>
+          <div class="campo">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required />
+          </div>
+          <div class="campo">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Número de contacto" required />
+          </div>
+          <div class="campo">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje"
+                      placeholder="¿En qué podemos ayudarte?"
+                      required></textarea>
+          </div>
+          <div class="campo">
+            <button type="submit" class="btn">Enviar mensaje <span>✉️</span></button>
+          </div>
+        </form>
+      </div>
+
+      <div class="contacto-info fade-up">
+        <div class="info-bloque">
+          <h3>Visítanos</h3>
+          <p>
+            Pikolin Store<br>
+            Calle del Descanso, 123<br>
+            28001 Madrid, España
+          </p>
+        </div>
+        <div class="info-bloque">
+          <h3>Horario</h3>
+          <p>
+            Lunes a Viernes: 10:00 – 14:00 / 16:00 – 20:00<br>
+            Sábados: 10:00 – 14:00<br>
+            Domingos: cerrado
+          </p>
+        </div>
+        <div class="info-bloque">
+          <h3>Contacto</h3>
+          <p>
+            Teléfono: <strong><a href="tel:900123456">900 123 456</a></strong><br>
+            Email: <strong><a href="mailto:info@pikolin.com">info@pikolin.com</a></strong>
+          </p>
+        </div>
+
+        <div class="info-bloque">
+          <h3>Síguenos</h3>
+          <div class="rrss">
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877f2">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <rect width="24" height="24" rx="6" fill="url(#instagram-gradient)"/>
+                <path d="M12 7.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6zm0 1.6a3.2 3.2 0 1 1 0 6.4 3.2 3.2 0 0 1 0-6.4z" fill="#fff"/>
+                <circle cx="17.5" cy="6.5" r="0.9" fill="#fff"/>
+                <defs>
+                  <linearGradient id="instagram-gradient" x1="0" y1="0" x2="24" y2="24">
+                    <stop offset="0%" stop-color="#f58529"/>
+                    <stop offset="50%" stop-color="#dd2a7b"/>
+                    <stop offset="100%" stop-color="#8134af"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#1da1f2">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Pikolin. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    // Sistema de Carrito
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    function guardarCarrito() {
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+    }
+
+    function actualizarCarrito() {
+      const itemsCarrito = document.getElementById('itemsCarrito');
+      const contadorCarrito = document.getElementById('contadorCarrito');
+      const totalCarrito = document.getElementById('totalCarrito');
+
+      const totalItems = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+      contadorCarrito.textContent = totalItems;
+
+      if (carrito.length === 0) {
+        itemsCarrito.innerHTML = '<div class="carrito-vacio">Tu cesta está vacía</div>';
+        totalCarrito.textContent = '0.00';
+      } else {
+        itemsCarrito.innerHTML = carrito.map((item, idx) => `
+          <div class="carrito-item">
+            <div class="carrito-item-info">
+              <div class="carrito-item-nombre">${item.producto}</div>
+              <div class="carrito-item-detalle">${item.tamaño} x ${item.cantidad}</div>
+            </div>
+            <div class="carrito-item-precio">${(item.precio * item.cantidad).toFixed(2)}€</div>
+            <button class="carrito-item-eliminar" onclick="eliminarDelCarrito(${idx})">×</button>
+          </div>
+        `).join('');
+
+        const total = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
+        totalCarrito.textContent = total.toFixed(2);
+      }
+    }
+
+    function agregarAlCarrito(producto, tamaño, precio, cantidad) {
+      const item = carrito.find(i => i.producto === producto && i.tamaño === tamaño);
+      if (item) {
+        item.cantidad += cantidad;
+      } else {
+        carrito.push({ producto, tamaño, precio, cantidad });
+      }
+      guardarCarrito();
+      actualizarCarrito();
+      const carritoModal = document.getElementById('carritoModal');
+      carritoModal.classList.add('activo');
+      setTimeout(() => {
+        carritoModal.classList.remove('activo');
+      }, 2000);
+    }
+
+    function eliminarDelCarrito(idx) {
+      carrito.splice(idx, 1);
+      guardarCarrito();
+      actualizarCarrito();
+    }
+
+    // Event listeners
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('btn-agregar')) {
+        const card = e.target.closest('.menu-card');
+        const selector = card.querySelector('.selector-tamaño');
+        const cantidad = parseInt(card.querySelector('.cantidad-input').value);
+        const precios = selector.dataset.precios.split('|').map(Number);
+        const indice = parseInt(selector.value);
+        const tamaño = selector.options[indice].text;
+        const precio = precios[indice];
+        const producto = e.target.dataset.producto;
+
+        agregarAlCarrito(producto, tamaño, precio, cantidad);
+      }
+    });
+
+    // Toggle carrito
+    document.getElementById('btnCarrito').addEventListener('click', (e) => {
+      e.stopPropagation();
+      document.getElementById('carritoModal').classList.toggle('activo');
+    });
+
+    document.addEventListener('click', (e) => {
+      const carritoModal = document.getElementById('carritoModal');
+      const btnCarrito = document.getElementById('btnCarrito');
+      if (!carritoModal.contains(e.target) && !btnCarrito.contains(e.target)) {
+        carritoModal.classList.remove('activo');
+      }
+    });
+
+    // Botón hacer pedido
+    document.getElementById('btnPedido').addEventListener('click', () => {
+      if (carrito.length === 0) {
+        alert('Tu cesta está vacía');
+        return;
+      }
+      alert('Funcionalidad de pedido en desarrollo. Total: ' + document.getElementById('totalCarrito').textContent + '€');
+    });
+
+    // Pestañas
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.menu-tab').forEach(t => t.style.display = 'none');
+        
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).style.display = 'block';
+      });
+    });
+
+    // Animaciones scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Año actual
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Inicializar
+    actualizarCarrito();
+  </script>
+</body>
+</html>
